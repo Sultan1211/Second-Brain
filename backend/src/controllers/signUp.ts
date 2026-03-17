@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { success, z } from "zod";
 import UserModel from "../db/user";
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
@@ -18,7 +18,7 @@ const signUpSchema = z.object({
 export const signUp = async (req: Request, res: Response) => {
   try {
     const result = signUpSchema.safeParse(req.body);
-
+console.log(success,"scc")
     if (!result.success) {
       return res.status(400).json({
         errors: result.error.format(),

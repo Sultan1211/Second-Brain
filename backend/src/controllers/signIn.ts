@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 import z from "zod";
 
 const jwtSecret = process.env.JWT_SECRET as string;
-
+console.log(process.env.JWT_SECRET,"secret");
 const signInSchema = z.object({
   username: z.string(),
   password: z.string(),
